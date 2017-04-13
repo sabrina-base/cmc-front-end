@@ -1,0 +1,21 @@
+{
+    "name": "vehicle-manager-frontend",
+    "ignore": [
+        "src/site",
+        "test"
+    ],
+    "dependencies": {
+        "angular": "^1.6.4"
+    },
+    "overrides": {
+        "font-awesome": {
+            "main": "css/font-awesome.css"
+        },
+        "bootstrap": {
+            "main": [
+                "dist/css/bootstrap.css",
+                "dist/js/bootstrap.js"
+            ]
+        }
+    }
+}
