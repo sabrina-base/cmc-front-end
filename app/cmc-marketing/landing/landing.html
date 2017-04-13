@@ -1,0 +1,26 @@
+<xmd-wizard active-step="currentStep" on-change="stepChanged()" on-save="wizardSaved()">
+		<xmd-step label="Step 1" xmd-required="true">
+			<md-input-container>
+				<label>test 1</label>
+				<input type="text" ng-model="landingCtrl.something" required>
+			</md-input-container>
+			<md-input-container>
+				<label>test 2</label>
+				<input type="text" ng-model="landingCtrl.something" required>
+			</md-input-container>
+			<md-input-container>
+				<label>test 3</label>
+				<input type="text" ng-model="landingCtrl.something">
+			</md-input-container>
+		</xmd-step>
+		<xmd-step label="Step 2">
+			<md-input-container>
+				<label>test 4</label>
+				<input type="text" ng-model="landingCtrl.something">
+			</md-input-container>
+			<md-input-container>
+				<label>test 5</label>
+				<input type="text" ng-model="landingCtrl.something">
+			</md-input-container>
+		</xmd-step>
+</xmd-wizard>
