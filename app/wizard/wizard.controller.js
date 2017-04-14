@@ -3,12 +3,12 @@
 
     angular
         .module('app.landing')
-        .controller('LandingController', LandingController);
+        .controller('WizardController', WizardController);
 
-    LandingController.$inject = ['landingFactory'];
+    WizardController.$inject = ['wizardFactory'];
 
     /* @ngInject */
-    function LandingController(landingFactory) {
+    function WizardController(wizardFactory) {
         var vm = this;
 
         activate();

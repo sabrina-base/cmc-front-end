@@ -1,0 +1,39 @@
+<div class = "ui large form">
+  <div class="two fields">
+    <div class="field">
+        <label>Vehicle Type:</label>
+        <div class="ui simple selection dropdown">
+            <input type="hidden" name="service">
+            <i class="dropdown icon"></i>
+            <div class="default text">Gender</div>
+            <div class="menu" >
+                <div class="item" ng-repeat="vehicleType in landingCtrl.vehicleTypes">{{vehicleType.vehicleSize}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label>Pick the date</label>
+        <div class="ui simple selection dropdown">
+            <input type="hidden" name="service">
+            <i class="dropdown icon"></i>
+            <div class="default text">Gender</div>
+            <div class="menu">
+                <div class="item" data-value="1">Male</div>
+                <div class="item" data-value="0">Female</div>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label>Pick the date</label>
+        <div class="ui simple selection dropdown">
+            <input type="hidden" name="service">
+            <i class="dropdown icon"></i>
+            <div class="default text">Gender</div>
+            <div class="menu">
+                <div class="item" data-value="1">Male</div>
+                <div class="item" data-value="0">Female</div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

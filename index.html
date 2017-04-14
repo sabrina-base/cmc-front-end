@@ -2,12 +2,14 @@
 
 <head>
 	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/select2/select2.css" />
+	<link rel="stylesheet" href="bower_components/angular-wizard/dist/angular-wizard.min.css" />
 	<!-- endbower -->
 
 	<!-- inject:css -->
 	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-	<link rel="stylesheet" href="bower_components/xmdwizard/build/xmdWizard.css">
 	<!-- endinject -->
+	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 
 <body>
@@ -26,21 +28,30 @@
 			</div>
 		</div>
 	</div>
-	<div ui-view>
+	<div class="container">
+		<div ui-view></div>
 	</div>
 	<!-- bower:js -->
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/semantic/dist/semantic.js"></script>
-	<!-- endbower -->
+	<script src="bower_components/select2/select2.js"></script>
+	<script src="bower_components/angular-ui-select3/src/select3.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-ui-select/dist/select.js"></script>
-	<script type="text/javascript" src="bower_components/xmdwizard/build/xmdWizard.directive.js"></script>
+	<script src="bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+	<!-- endbower -->
+
 	<!-- inject:js -->
 	<script src="app/app.module.js"></script>
+	<script src="app/core/core.module.js"></script>
+	<script src="app/landing/landing.module.js"></script>
+	<script src="app/wizard/wizard.module.js"></script>
 	<script src="app/cmc-marketing/landing/landing.module.js"></script>
-	<script src="app/cmc-marketing/landing/landing.controller.js"></script>
-	<script src="app/cmc-marketing/landing/landing.factory.js"></script>
+	<script src="app/core/vehicleType.factory.js"></script>
+	<script src="app/landing/landing.controller.js"></script>
+	<script src="app/landing/landing.factory.js"></script>
+	<script src="app/wizard/wizard.controller.js"></script>
+	<script src="app/wizard/wizard.factory.js"></script>
 	<!-- endinject -->
 </body>
 

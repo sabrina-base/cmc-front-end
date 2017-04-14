@@ -4,9 +4,10 @@
     angular
         .module('app', [
             'ui.router',
-            'ui.select',
+            'ui.select2',
             'app.landing',
-            'xmd.directives.xmdWizard'
+            'app.core',
+            'mgo-angular-wizard'
         ])
         .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
@@ -16,7 +17,7 @@
                 .state('landing', {
                     url: '/landing',
                     controller: 'LandingController as landingCtrl',
-                    templateUrl: 'app/cmc-marketing/landing/landing.html'
+                    templateUrl: 'app/landing/landing.html'
                 });
             // .state('registration', {
             //     url: '/registration',
