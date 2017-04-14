@@ -1,39 +1,28 @@
-<div class = "ui large form">
-  <div class="two fields">
-    <div class="field">
-        <label>Vehicle Type:</label>
-        <div class="ui simple selection dropdown">
-            <input type="hidden" name="service">
-            <i class="dropdown icon"></i>
-            <div class="default text">Gender</div>
-            <div class="menu" >
-                <div class="item" ng-repeat="vehicleType in landingCtrl.vehicleTypes">{{vehicleType.vehicleSize}}</div>
+<div class="ui large form">
+    <div class="two fields">
+        <div class="field">
+            <label>Vehicle Type:</label>
+            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedVehicle" ng-options="vehicle.multiplier as vehicle.vehicleSize for vehicle in landingCtrl.vehicleTypes">
+            <option value="">Vehicle Type</option>
+        </select>
+        </div>
+        <div class="field">
+            <label>Services Offered</label>
+            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedService" ng-options="service.cost as service.serviceType for service in landingCtrl.services">
+            <option value="">Service</option>
+        </select>
+        </div>
+        <div class="field">
+            <label>Pick the date</label>
+            <div class="ui calendar" id="example1">
+                <div class="ui input left icon">
+                    <i class="calendar icon"></i>
+                    <input type="text" placeholder="Date/Time">
+                </div>
             </div>
         </div>
     </div>
-    <div class="field">
-        <label>Pick the date</label>
-        <div class="ui simple selection dropdown">
-            <input type="hidden" name="service">
-            <i class="dropdown icon"></i>
-            <div class="default text">Gender</div>
-            <div class="menu">
-                <div class="item" data-value="1">Male</div>
-                <div class="item" data-value="0">Female</div>
-            </div>
-        </div>
-    </div>
-    <div class="field">
-        <label>Pick the date</label>
-        <div class="ui simple selection dropdown">
-            <input type="hidden" name="service">
-            <i class="dropdown icon"></i>
-            <div class="default text">Gender</div>
-            <div class="menu">
-                <div class="item" data-value="1">Male</div>
-                <div class="item" data-value="0">Female</div>
-            </div>
-        </div>
-    </div>
-  </div>
+    <button class="button" ng-click="landingCtrl.estimate()">Calculate</button>
+    <br> {{landingCtrl.price | currency: '$'}}
 </div>
+<script src="../../scripts/scripts.js"></script>

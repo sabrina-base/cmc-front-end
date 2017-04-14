@@ -5,13 +5,14 @@
         .module('app.landing')
         .controller('LandingController', LandingController);
 
-    LandingController.$inject = ['vehicleTypeFactory', '$stateParams'];
+    LandingController.$inject = ['servicesFactory', 'vehicleTypeFactory', '$stateParams'];
 
     /* @ngInject */
-    function LandingController(vehicleTypeFactory, $stateParams) {
+    function LandingController(servicesFactory, vehicleTypeFactory, $stateParams) {
         var vm = this;
-        vm.test = "landing test";
-        console.log("Controller Landing");
+        vm.estimate = function(){
+          vm.price = (vm.selectedService * vm.selectedVehicle).toFixed(2);
+        }
 
         activate();
 
@@ -19,11 +20,20 @@
             vehicleTypeFactory
                 .getAll()
                 .then(function(data) {
-                  console.log(data);
+                    console.log(data);
                     vm.vehicleTypes = data;
                 })
                 .catch(function(error) {
-                  console.error(error);
+                    console.error(error);
+                });
+            servicesFactory
+                .getAll()
+                .then(function(data) {
+                    console.log(data);
+                    vm.services = data;
+                })
+                .catch(function(error) {
+                    console.error(error);
                 });
         }
     }
