@@ -1,3 +1,1 @@
-var calendarElement = document.getElementById('#example1');
-
-calendarElement.calendar();
+$('#example1').calendar();
