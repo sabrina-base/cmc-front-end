@@ -5,7 +5,6 @@
         .module('app', [
             'ui.router',
             'ui.select2',
-            'app.landing',
             'app.core',
             'mgo-angular-wizard'
         ])

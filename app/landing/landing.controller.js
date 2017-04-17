@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.landing')
+        .module('app.core')
         .controller('LandingController', LandingController);
 
     LandingController.$inject = ['servicesFactory', 'vehicleTypeFactory', '$stateParams'];
