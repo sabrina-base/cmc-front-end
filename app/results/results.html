@@ -1,4 +1,4 @@
-<h1>RESULTS PAGE!</h1>
+<h1 id="AR" class="pointer">RESULTS PAGE!</h1>
 
 
 <p>{{resultsCtrl.resultsTest}}</p>
@@ -19,14 +19,51 @@
           </div>
         </custom-marker> -->
         <marker position="{{resultsCtrl.lat}},{{resultsCtrl.long}}" title="Hello World!"></marker>
-        </ng-map>
+      </ng-map>
     </div>
   </div>
   <div id="list" class="four wide column">
-    <div class="option" ng-repeat="option in resultsCtrl.options">
-      <h1>{{$index+1}}</h1>
-      <labe>Name:</labe> <p>{{option.name}}</p>
-      <label>Rating: </label> <p>{{option.rating}}</p>
+    <div id="filters" class="sixteen wide column">
+      <h4>ORDER BY:</h4>
+      <div class="ui grid">
+        <div class="five wide column" ng-click="resultsCtrl.showPriceDiv()">
+          <h5 class="pointer">Price</h5>
+        </div>
+        <div class="five wide column" ng-click="resultsCtrl.showRatingDiv()">
+          <h5 class="pointer">Rating</h5>
+        </div>
+        <div class="five wide column" ng-click="resultsCtrl.showAvailabilityDiv()">
+          <h5 class="pointer">Availability</h5>
+        </div>
+        <div class="sixteen wide column" ng-show="resultsCtrl.priceDivVisibility">
+          <div class="ui buttons center">
+            <button class="ui button">Any</button>
+            <button class="ui button">$</button>
+            <button class="ui button">$$</button>
+            <button class="ui button">$$$</button>
+          </div>
+        </div>
+        <div class="sixteen wide column" ng-show="resultsCtrl.ratingDivVisibility">
+          Rating div
+        </div>
+        <div class="sixteen wide column" ng-show="resultsCtrl.availabilityDivVisibility">
+          Availability div
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="optionsList ui grid" ng-repeat="option in resultsCtrl.options">
+      <div class="two wide column">
+        <p id="optionNumberText">{{$index+1}}</p>
+      </div>
+      <div class="fourteen wide column">
+        <p id="detailerText">{{option.name}}</p>
+        <p id="ratingText">{{option.rating}} ***** ({{option.reviews}})</p>
+        <p>$ {{option.multiplier * 30}} dlls</p>
+      </div>
+      <div class="sixteen wide column">
+        <hr>
+      </div>
     </div>
   </div>
 </div>
