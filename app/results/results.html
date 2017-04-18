@@ -1,0 +1,32 @@
+<h1>RESULTS PAGE!</h1>
+
+
+<p>{{resultsCtrl.resultsTest}}</p>
+
+
+<hr>
+
+<div id="results" class="ui grid">
+  <div id="map" class="twelve wide column">
+    <!--add ng show-->
+    <div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyCxWskDwzfW43MiAe0dZN60jR6RN36t3Ps">
+      <ng-map center="current-location" zoom="18">
+        <!-- on-click="vm.map.showInfoWindow('foo', 'custom-marker-'+$index)"
+                              position="{{p.pos}}" -->
+        <!-- <custom-marker ng-repeat="r in homeCtrl.restaurants track by $index" id="custom-marker-{{$index}}" position="[{{r.geometry.location.lat}},{{r.geometry.location.lng}}]">
+          <div>
+            <span class="marker">{{$index+1}}. {{r.name}}</span>
+          </div>
+        </custom-marker> -->
+        <marker position="{{resultsCtrl.lat}},{{resultsCtrl.long}}" title="Hello World!"></marker>
+        </ng-map>
+    </div>
+  </div>
+  <div id="list" class="four wide column">
+    <div class="option" ng-repeat="option in resultsCtrl.options">
+      <h1>{{$index+1}}</h1>
+      <labe>Name:</labe> <p>{{option.name}}</p>
+      <label>Rating: </label> <p>{{option.rating}}</p>
+    </div>
+  </div>
+</div>
