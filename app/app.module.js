@@ -6,7 +6,8 @@
             'ui.router',
             'ui.select2',
             'app.core',
-            'mgo-angular-wizard'
+            'mgo-angular-wizard',
+            'LocalStorageModule'
         ])
         .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
@@ -17,41 +18,21 @@
                     url: '/landing',
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
-                });
-            // .state('registration', {
-            //     url: '/registration',
-            //     controller: '#',
-            //     templateUrl: 'app/account/registration.html'
-            // })
-            // .state('search.results', {
-            //     url: '/results/:id',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-marketing/results.html'
-            // })
-            // .state('details', {
-            //     url: '/detailers/:id',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-marketing/details.html'
-            // })
-            // .state('customer.profile', {
-            //     url: '/customers/:id',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-marketing/profile.html'
-            // })
-            // .state('login', {
-            //     url: '/login',
-            //     controller: '#',
-            //     templateUrl: 'app/account/login.html'
-            // })
-            // .state('appointments', {
-            //     url: '/appointments',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-detailer/appointments.html'
-            // })
-            // .state('detailer.profile', {
-            //     url: '/detailers/:id',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-detailer/profile.html'
-            // });
+                })
+             .state('login', {
+                 url: '/login',
+                 controller: 'LoginController as loginCtrl',
+                 templateUrl: 'app/login/login.html'
+             })
+            .state('detailer.profile', {
+                url: '/detailers/:id',
+                controller: 'DetailersProfileController as detailersProfileCtrl',
+                templateUrl: 'app/profile/detailersprofiles.html'
+            })
+            .state('customer.profile', {
+                url: '/customers/:id',
+                controller: 'CustomersController as customersCtrl',
+                templateUrl: 'app/profile/customersprofile.html'
+            })
         });
 })();

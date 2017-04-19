@@ -13,7 +13,7 @@
           initialize: initialize,
           logout: logout,
             register: register,
-            login: login
+            login: login,
             isLoggedIn: false,
             username: ''
         };
@@ -29,14 +29,14 @@
                 '&username=' + username +
                 '&password=' + password;
 
-            return $http.post(apiUrl + 'token', data, {
+            return $http.post(apiUrl + 'users/login', data, {
                     headers: {
-                        'Content-Type': 'application/x-ww-form0urlencoded'
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
                 .then(function(response) {
                     localStorageService.set('authorizationData', {
-                        token: reponse.data.access_token,
+                        token: response.data.access_token,
                         username: username
                     });
                     service.isLoggedIn = true;

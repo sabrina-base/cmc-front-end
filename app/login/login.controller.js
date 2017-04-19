@@ -2,19 +2,32 @@
     'use strict';
 
     angular
-        .module('module')
-        .controller('Controller', Controller);
+        .module('app.core')
+        .controller('LoginController', LoginController);
 
-    Controller.$inject = ['dependencies'];
+    LoginController.$inject = ['authFactory', '$state', '$stateParams'];
 
     /* @ngInject */
-    function Controller(dependencies) {
+    function LoginController(authFactory, $state, $stateParams) {
         var vm = this;
+        vm.title = 'LoginController';
 
-        activate();
+        vm.login = login;
 
-        function activate() {
-
+        function login() {
+            authFactory
+                .login(vm.username, vm.password)
+                .then(function(data) {
+                    if (data.roles.includes('detailer')) {
+                        $state.go('profileDetailer');
+                    }
+                    if (data.roles.includes('customer')) {
+                        $state.go('profileCustomer');
+                    }
+                })
+                .catch(function() {
+                    alert('Incorrect username or password');
+                });
         }
     }
 })();
