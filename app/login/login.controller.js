@@ -18,7 +18,7 @@
             authFactory
                 .login(vm.username, vm.password)
                 .then(function() {
-                    $state.go('profile')
+                    $state.go('profile');
                   })
                 .catch(function() {
                     alert('Incorrect username or password');

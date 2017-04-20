@@ -26,7 +26,7 @@
                     templateUrl: 'app/login/login.html'
                 })
                 .state('profile', {
-                    url: '/profile/',
+                    url: '/profile',
                     controller: 'ProfileController as profileCtrl',
                     templateUrl: 'app/profile/profile.html'
                 })
