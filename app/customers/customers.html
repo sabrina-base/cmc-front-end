@@ -1,0 +1,52 @@
+<h1>My Account</h1>
+
+<div class="ui grid input">
+    <div class="eight wide column ui grid">
+        <label class="four wide column">First Name</label>
+        <input class="four wide column"type="text" ng-model="customersCtrl.customer.firstName">
+    </div>
+    <div class="eight wide column ui grid">
+        <label class="four wide column">Last Name</label>
+        <input class="four wide column" type="text" ng-model="customersCtrl.customer.lastName">
+    </div>
+    <div class="eight wide column ui grid">
+        <label class="four wide column">Email</label>
+        <input class="four wide column" type="text" ng-model="customersCtrl.customer.emailAddress">
+    </div>
+    <div class="eight wide column ui grid">
+        <label class="four wide column">Cellphone</label>
+        <input class="four wide column" type="text" ng-model="customersCtrl.customer.cellphone">
+    </div>
+    <div class="sixteen wide column ui grid">
+        <label>Address</label>
+        <input class="sixteen wide column" type="text" ng-model="customersCtrl.customer.address">
+    </div>
+  </div>
+
+<div class="content">
+  <button class="ui right floated teal button" ng-click="customersCtrl.save()">Save</button>
+</div>
+
+<div class="ui basic table">
+    <h1>History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Detailer</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Vehicle Type</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="appointment in customersCtrl.customer.appointments">
+                <td>{{$index + 1}}</td>
+                <td>{{appointment.firstName}} {{appointment.lastName}}</td>
+                <td>{{appointment.appointmentDate | date}}</td>
+                <td>{{appointment.totalCost | currency}}</td>
+                <td>{{appointment.vehicleSize}}</td>
+                <td><button class="ui teal button">Rebook</button></td>
+            </tr>
+        </tbody>

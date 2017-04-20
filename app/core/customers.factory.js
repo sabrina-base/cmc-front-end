@@ -31,12 +31,16 @@
             return $http
                 .get(apiUrl + 'customers/' + id)
                 .then(function(response) {
+                  console.log(response);
                     return response.data;
                 });
         }
 
         function update(id, customer) {
-            return $http.put(apiUrl + 'customers/' + id, customer);
+            return $http.put(apiUrl + 'customers/' + id, customer)
+            .catch(function(error){
+              console.error(error)
+            });
         }
 
         function create(customer) {

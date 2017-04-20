@@ -19,6 +19,13 @@
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
                 });
+
+          $stateProvider
+                .state('customers', {
+                  url: '/customers/:id',
+                  controller: 'CustomersController as customersCtrl',
+                  templateUrl: 'app/customers/customers.html'
+                });
             // .state('registration', {
             //     url: '/registration',
             //     controller: '#',
