@@ -10,7 +10,8 @@
             'LocalStorageModule'
         ])
         .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
-        .config(function($stateProvider, $urlRouterProvider) {
+        .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+            $httpProvider.interceptors.push('authInterceptorService')
             $urlRouterProvider.otherwise('/landing');
             // Configure each one of our states
             $stateProvider
@@ -19,20 +20,15 @@
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
                 })
-             .state('login', {
-                 url: '/login',
-                 controller: 'LoginController as loginCtrl',
-                 templateUrl: 'app/login/login.html'
-             })
-            .state('detailer.profile', {
-                url: '/detailers/:id',
-                controller: 'DetailersProfileController as detailersProfileCtrl',
-                templateUrl: 'app/profile/detailersprofiles.html'
-            })
-            .state('customer.profile', {
-                url: '/customers/:id',
-                controller: 'CustomersController as customersCtrl',
-                templateUrl: 'app/profile/customersprofile.html'
-            })
+                .state('login', {
+                    url: '/login',
+                    controller: 'LoginController as loginCtrl',
+                    templateUrl: 'app/login/login.html'
+                })
+                .state('profile', {
+                    url: '/profile/',
+                    controller: 'ProfileController as profileCtrl',
+                    templateUrl: 'app/profile/profile.html'
+                })
         });
 })();

@@ -42,6 +42,8 @@
                     service.isLoggedIn = true;
                     service.username = username;
                     return response.data;
+                }).catch(function(error){
+                  console.log(error);
                 });
         }
         function initialize() {

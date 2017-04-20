@@ -17,14 +17,9 @@
         function login() {
             authFactory
                 .login(vm.username, vm.password)
-                .then(function(data) {
-                    if (data.roles.includes('detailer')) {
-                        $state.go('profileDetailer');
-                    }
-                    if (data.roles.includes('customer')) {
-                        $state.go('profileCustomer');
-                    }
-                })
+                .then(function() {
+                    $state.go('profile')
+                  })
                 .catch(function() {
                     alert('Incorrect username or password');
                 });
