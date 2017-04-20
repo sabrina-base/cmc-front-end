@@ -5,20 +5,22 @@
         .module('app', [
             'ui.router',
             'ui.select2',
+            'ui.calendar',
             'app.landing',
             'app.core',
+            'ngMaterial',
             'mgo-angular-wizard'
         ])
-        .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
+        .value('apiUrl', 'http://washmycarapi.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/landing');
+            $urlRouterProvider.otherwise('/appointments');
             // Configure each one of our states
             $stateProvider
                 .state('landing', {
                     url: '/landing',
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
-                });
+                })
             // .state('registration', {
             //     url: '/registration',
             //     controller: '#',
@@ -44,11 +46,11 @@
             //     controller: '#',
             //     templateUrl: 'app/account/login.html'
             // })
-            // .state('appointments', {
-            //     url: '/appointments',
-            //     controller: '#',
-            //     templateUrl: 'app/cmc-detailer/appointments.html'
-            // })
+                .state('appointments', {
+                    url: '/appointments',
+                    controller: 'AppointmentsController as appointmentsCtrl',
+                    templateUrl: 'app/appointments/appointments.html'
+                });
             // .state('detailer.profile', {
             //     url: '/detailers/:id',
             //     controller: '#',
