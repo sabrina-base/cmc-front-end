@@ -18,6 +18,12 @@
                     url: '/landing',
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
+                });
+            $stateProvider
+                .state('detailersProfile', {
+                    url: '/detailersProfile',
+                    controller: 'DetailersProfileController as detailersProfileCtrl',
+                    templateUrl: 'app/detailersProfile/detailersProfile.html'
                 })
                 .state('login', {
                     url: '/login',
