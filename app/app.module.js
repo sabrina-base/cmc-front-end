@@ -55,5 +55,6 @@
                     controller: 'ResultsController as resultsCtrl',
                     templateUrl: 'app/results/results.html'
                 });
+
         });
 })();
