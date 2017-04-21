@@ -20,7 +20,6 @@
             vehicleTypeFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.vehicleTypes = data;
                 })
                 .catch(function(error) {
@@ -29,7 +28,6 @@
             servicesFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.services = data;
                 })
                 .catch(function(error) {
