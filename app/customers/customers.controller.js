@@ -12,7 +12,7 @@
         var vm = this;
         var customerId = $stateParams.id;
         activate();
-        
+
 
         function activate() {
           customersFactory.getById(customerId)
@@ -22,14 +22,12 @@
         }
 
       vm.save = function(){
-        console.log(vm.customer);
           customersFactory
           .update(vm.customer.customerId, vm.customer)
           .then(function(){
             alert('Updated!')
           })
           .catch(function(error){
-            console.error(error)
           });
         }
 

@@ -1,31 +1,36 @@
 <h1>My Account</h1>
-
-<div class="ui grid input">
-    <div class="eight wide column ui grid">
-        <label class="four wide column">First Name</label>
-        <input class="four wide column"type="text" ng-model="customersCtrl.customer.firstName">
+<div class="item">
+  <button class="ui right floated teal button" ng-click="customersCtrl.save()">Save</button>
+</div>
+<div class="ui equal width form">
+    <div class="fields">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" ng-model="customersCtrl.customer.firstName" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" ng-model="customersCtrl.customer.lastName" placeholder="Last Name">
+      </div>
     </div>
-    <div class="eight wide column ui grid">
-        <label class="four wide column">Last Name</label>
-        <input class="four wide column" type="text" ng-model="customersCtrl.customer.lastName">
-    </div>
-    <div class="eight wide column ui grid">
-        <label class="four wide column">Email</label>
-        <input class="four wide column" type="text" ng-model="customersCtrl.customer.emailAddress">
-    </div>
-    <div class="eight wide column ui grid">
-        <label class="four wide column">Cellphone</label>
-        <input class="four wide column" type="text" ng-model="customersCtrl.customer.cellphone">
-    </div>
-    <div class="sixteen wide column ui grid">
+    <div class="fields">
+      <div class="field">
         <label>Address</label>
-        <input class="sixteen wide column" type="text" ng-model="customersCtrl.customer.address">
+        <input type="text" ng-model="customersCtrl.customer.address" placeholder="Address">
+      </div>
+      <div class="field">
+        <label>Email </label>
+        <input type="text" ng-model="customersCtrl.customer.emailAddress" placeholder="Email">
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="text" ng-model="customersCtrl.customer.cellphone" placeholder="Phone Number">
+      </div>
     </div>
   </div>
 
-<div class="content">
-  <button class="ui right floated teal button" ng-click="customersCtrl.save()">Save</button>
-</div>
+
+
 
 <div class="ui basic table">
     <h1>History</h1>
@@ -47,6 +52,6 @@
                 <td>{{appointment.appointmentDate | date}}</td>
                 <td>{{appointment.totalCost | currency}}</td>
                 <td>{{appointment.vehicleSize}}</td>
-                <td><button class="ui teal button">Rebook</button></td>
+                <td><button ui-sref="landing" class="ui right teal button">Rebook</button></td>
             </tr>
         </tbody>

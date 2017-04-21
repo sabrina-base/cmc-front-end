@@ -20,20 +20,16 @@
             vehicleTypeFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.vehicleTypes = data;
                 })
                 .catch(function(error) {
-                    console.error(error);
                 });
             servicesFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.services = data;
                 })
                 .catch(function(error) {
-                    console.error(error);
                 });
         }
     }
