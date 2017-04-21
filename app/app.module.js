@@ -5,9 +5,13 @@
         .module('app', [
             'ui.router',
             'ui.select2',
+            'ui.calendar',
             'app.landing',
             'app.core',
+            'ngMaterial',
             'mgo-angular-wizard',
+            'angularify.semantic',
+            'oitozero.ngSweetAlert',
             'LocalStorageModule'
         ])
         .value('apiUrl', 'http://localhost:51049/api/')
@@ -20,6 +24,11 @@
                     url: '/landing',
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
+                })
+                .state('appointments', {
+                    url: '/appointments',
+                    controller: 'AppointmentsController as appointmentsCtrl',
+                    templateUrl: 'app/appointments/appointments.html'
                 });
 
             $stateProvider
@@ -55,6 +64,5 @@
                     controller: 'ResultsController as resultsCtrl',
                     templateUrl: 'app/results/results.html'
                 });
-
         });
 })();

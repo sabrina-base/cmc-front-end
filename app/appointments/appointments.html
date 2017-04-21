@@ -1,0 +1,70 @@
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Requests">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Requests</h1>                    
+                    <table>
+                        <tr ng-repeat="appointment in appointmentsCtrl.appointments"
+                            ng-hide="appointment.confirmedDate || appointment.cancelledDate">
+                            <td>
+                                <br> 
+                                {{appointment.firstName}} {{appointment.lastName}} has requested an appointment for {{appointment.appointmentDate | date: 'medium'}} 
+                                <span ng-show="appointment.confirmedDate">{{appointment.confirmedDate | date}}</span>
+                                <span ng-show="appointment.cancelledDate">{{appointment.cancelledDate | date}}</span>
+                                <br>
+                            </td>
+                            <td width="1%">
+                                <br>
+                                <button type="button" class="ui teal button" ng-click="appointmentsCtrl.confirm(appointment)">Accept</button>
+                                <br>
+                            </td>
+                            <td width="1%">
+                                <br>
+                                <button type="button" class="ui teal button" ng-click="appointmentsCtrl.decline(appointment)">Decline</button>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                    {{appointmentsCtrl.appointments[3]}}
+                </md-content>
+            </md-tab>
+            <md-tab label="Schedule" md-on-select="appointmentsCtrl.renderCalendar()">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Schedule</h1>
+                    <h1>Calendar</h1>
+                    <div id="calendar" class="calendar" ui-calendar="appointmentsCtrl.calendar.options" ng-model="appointmentsCtrl.calendar.eventSources"></div>
+                    <pre>{{appointmentsCtrl.calendar.events | json}}</pre>
+                </md-content>
+            </md-tab>
+            <md-tab label="History">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">History</h1>
+
+                    <i class='filter icon'></i>
+                    <dropdown title="Filter" open="false">
+                      <dropdown-group>YearToDate</dropdown-group>
+                      <dropdown-group>Last Month</dropdown-group>
+                      <dropdown-group>Last Week</dropdown-group>
+                    </dropdown>
+                    <table>
+                        <tr ng-repeat="appointment in appointmentsCtrl.appointments">
+                            <td>
+                                <br> {{appointment.servicesWithAppointment}} 
+                                <br>
+                            </td>
+                            <td width="3%">
+                                <br> {{appointment.appointmentRating}}
+                                <br>
+                            </td>
+                            <td>
+                                <br> {{appointment.appointmentDate | date: 'medium'}}
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
