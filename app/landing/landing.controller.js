@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.landing')
+        .module('app.core')
         .controller('LandingController', LandingController);
 
     LandingController.$inject = ['servicesFactory', 'vehicleTypeFactory', '$stateParams'];
@@ -20,7 +20,6 @@
             vehicleTypeFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.vehicleTypes = data;
                 })
                 .catch(function(error) {
@@ -29,7 +28,6 @@
             servicesFactory
                 .getAll()
                 .then(function(data) {
-                    console.log(data);
                     vm.services = data;
                 })
                 .catch(function(error) {

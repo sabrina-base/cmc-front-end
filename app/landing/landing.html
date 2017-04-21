@@ -6,8 +6,7 @@
             <option value="">Vehicle Type</option>
         </select>
         </div>
-        <
-div class="field">
+        <div class="field">
             <label>Services Offered</label>
             <select class="ui fluid dropdown" ng-model="landingCtrl.selectedService" ng-options="service.cost as service.serviceType for service in landingCtrl.services">
             <option value="">Service</option>
@@ -23,6 +22,8 @@ div class="field">
             </div>
         </div>
     </div>
-    <button class="button" ng-click="landingCtrl.estimate()">Calculate</button>
+    <button class="ui teal button" ng-click="landingCtrl.estimate()">Calculate</button>
     <br> {{landingCtrl.price | currency: '$'}}
+    <br><button class="ui teal button" ui-sref="registerCustomers">Register as a customer!</button>
+    <br><button class="ui teal button" ui-sref="registerDetailers">Register as a detialer!</button>
 </div>

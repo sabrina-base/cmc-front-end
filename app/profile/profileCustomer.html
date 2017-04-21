@@ -1,0 +1,53 @@
+<h1>My Account</h1>
+<div class="item">
+  <button class="ui right floated teal button" ng-click="customersCtrl.save()">Save</button>
+</div>
+<div class="ui equal width form">
+    <div class="fields">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" ng-model="customersCtrl.customer.firstName" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" ng-model="customersCtrl.customer.lastName" placeholder="Last Name">
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label>Address</label>
+        <input type="text" ng-model="customersCtrl.customer.address" placeholder="Address">
+      </div>
+      <div class="field">
+        <label>Email </label>
+        <input type="text" ng-model="customersCtrl.customer.emailAddress" placeholder="Email">
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="text" ng-model="customersCtrl.customer.cellphone" placeholder="Phone Number">
+      </div>
+    </div>
+  </div>
+<div class="ui basic table">
+    <h1>History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Detailer</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Vehicle Type</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="appointment in customersCtrl.customer.appointments">
+                <td>{{$index + 1}}</td>
+                <td>{{appointment.firstName}} {{appointment.lastName}}</td>
+                <td>{{appointment.appointmentDate | date}}</td>
+                <td>{{appointment.totalCost | currency}}</td>
+                <td>{{appointment.vehicleSize}}</td>
+                <td><button ui-sref="landing" class="ui right teal button">Rebook</button></td>
+            </tr>
+        </tbody>

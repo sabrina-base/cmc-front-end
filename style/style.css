@@ -1,4 +1,44 @@
-.container{
-  padding-left: 1em;
-  padding-right: 1em;
+h1{
+  text-align: center;
+  padding: 5px 0 10px 0;
+}
+
+
+.container {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+/*GRIDS*/
+#filters{
+  /*border: 1px black solid;*/
+  /*border: 10px solid #00B5AD;
+  border-radius: 25px;
+  */
+  padding: 0;
+  margin: 0;
+}
+
+.detailerOptionsDiv{
+  margin: 5px 0 5px 0;
+  border-top: 1px solid black;
+  /*border-bottom: 1px solid black;*/
+}
+
+#optionNumberText {
+  font-size: 50px;
+}
+
+#detailerText {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+#ratingText {
+  color: orange;
 }
