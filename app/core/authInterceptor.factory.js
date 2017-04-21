@@ -22,7 +22,7 @@
             var authData = localStorageService.get('authorizationData');
 
             if (authData) {
-                httpRequest.headers.Authorization = 'Bearer' + authData.token;
+                httpRequest.headers.Authorization = 'Bearer ' + authData.token;
             }
 
             return httpRequest;

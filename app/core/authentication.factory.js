@@ -12,7 +12,8 @@
         var service = {
           initialize: initialize,
           logout: logout,
-            register: register,
+            registerDetailer: registerDetailer,
+            registerCustomer: registerCustomer,
             login: login,
             isLoggedIn: false,
             username: ''
@@ -20,14 +21,17 @@
 
         return service;
 
-        function register(registrationData) {
-            return $http.post(apiUrl + 'users/register', registrationData)
+        function registerDetailer(registrationData) {
+            return $http.post(apiUrl + 'users/registerDetailer', registrationData)
+        }
+        function registerCustomer(registrationData) {
+            return $http.post(apiUrl + 'users/registerCustomer', registrationData)
         }
 
         function login(username, password) {
             logout();
 
-            var data = 'grant_type=password&' +
+            var data = 'grant_type=password' +
                 '&username=' + username +
                 '&password=' + password;
 

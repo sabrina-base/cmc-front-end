@@ -6,10 +6,9 @@
             'ui.router',
             'ui.select2',
             'app.core',
-            'mgo-angular-wizard',
             'LocalStorageModule'
         ])
-        .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
+        .value('apiUrl', 'http://localhost:51049/api/')
         .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             $httpProvider.interceptors.push('authInterceptorService')
             $urlRouterProvider.otherwise('/landing');
@@ -31,10 +30,20 @@
                     controller: 'LoginController as loginCtrl',
                     templateUrl: 'app/login/login.html'
                 })
-                .state('profile', {
-                    url: '/profile',
-                    controller: 'ProfileController as profileCtrl',
-                    templateUrl: 'app/profile/profile.html'
+                .state('registerDetailers', {
+                  url: '/users/registerDetailer',
+                  controller: 'RegisterController as registerCtrl',
+                  templateUrl: 'app/register/registerDetailer.html'
+                })
+                .state('registerCustomers', {
+                  url: '/users/registerCustomer',
+                  controller: 'RegisterController as registerCtrl',
+                  templateUrl: 'app/register/registerCustomer.html'
+                })
+                .state('customerProfile', {
+                  url: '/customerProfile',
+                  controller: 'CustomersController as customersCtrl',
+                  templateUrl: 'app/profile/profileCustomer.html'
                 })
         });
 })();

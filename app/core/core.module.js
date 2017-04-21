@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.core', ['checklist-model']);
+        .module('app.core', ['checklist-model', 'mgo-angular-wizard', 'google.places']);
 })();
