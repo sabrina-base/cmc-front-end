@@ -1,0 +1,31 @@
+<wizard on-finish="finishedWizard()">
+    <wz-step wz-title="Name">
+        <h1>Enter your first and last name!</h1>
+        <label for="">First Name:</label>
+        <input type="text" class="form-control" ng-model="registerCtrl.registration.firstName">
+        <label for="">Last Name:</label>
+        <input type="text" class="form-control" ng-model="registerCtrl.registration.lastName">
+        <input type="submit" wz-next value="Continue" />
+    </wz-step>
+    <wz-step wz-title="Email">
+        <h1>Enter your email address!</h1>
+        <input type="email" class="form-control" ng-model="registerCtrl.registration.emailAddress">
+        <input type="submit" wz-next value="Go on" />
+    </wz-step>
+    <wz-step wz-title="Personal Info">
+        <p>Put in your address and phone number!</p>
+        <h1>Address:</h1>
+        <input type="text" class="form-control" g-places-autocomplete ng-model="registerCtrl.registration.address">
+        <h1>Phone #:</h1>
+        <input type="text" class="form-control" ng-model="registerCtrl.registration.cellphone">
+        <input type="submit" wz-next value="Continue" />
+    </wz-step>
+    <wz-step wz-title="Username and Password">
+        <h1>Enter your username!</h1>
+        <input type="text" class="form-control" ng-model="registerCtrl.registration.username">
+        <h1>Enter and confirm your password!</h1>
+        <input type="password" class="form-control" ng-model="registerCtrl.registration.password">
+        <input type="password" class="form-control" ng-model="registerCtrl.registration.confirmPassword">
+            <button type="submit" wz-next ng-click="registerCtrl.registerCust()" value="Finish Now" />
+    </wz-step>
+</wizard>
