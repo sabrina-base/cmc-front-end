@@ -14,10 +14,19 @@
             getById: getById,
             update: update,
             create: create,
-            remove: remove
+            remove: remove,
+            getCurrent: getCurrent
         };
 
         return service;
+
+        function getCurrent() {
+            return $http
+                .get(apiUrl + 'customerProfile/')
+                .then(function(response) {
+                    return response.data;
+                });
+        }
 
         function getAll() {
             return $http
@@ -54,5 +63,6 @@
                     return response.data;
                 });
         }
+
     }
 })();
