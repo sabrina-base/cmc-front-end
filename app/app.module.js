@@ -9,9 +9,11 @@
             'app.landing',
             'app.core',
             'ngMaterial',
-            'mgo-angular-wizard'
+            'mgo-angular-wizard',
+            'angularify.semantic',
+            'oitozero.ngSweetAlert'
         ])
-        .value('apiUrl', 'http://washmycarapi.azurewebsites.net/api/')
+        .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/appointments');
             // Configure each one of our states
