@@ -1,0 +1,78 @@
+<head>
+
+<h1><center> Detailers Profile </center></h1>
+
+
+</head>
+<!-- Basic Informatiion table -->
+
+<body>
+  <div>
+    <h2> Basic Information </h2>
+    <center>
+      <div class="ui small image">
+        <img src="https://thumbs.dreamstime.com/x/car-wash-7760208.jpg">
+      </div>
+    </center>
+  </div>
+
+  <div class="ui equal width form">
+    <div class="fields">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" ng-model="detailersProfileCtrl.detailer.firstName" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" ng-model="detailersProfileCtrl.detailer.lastName" placeholder="Last Name">
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label>Address</label>
+        <input type="text" ng-model="detailersProfileCtrl.detailer.address" placeholder="Address">
+      </div>
+      <div class="field">
+        <label>Email </label>
+        <input type="text" ng-model="detailersProfileCtrl.detailer.emailAddress" placeholder="Email">
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="text" ng-model="detailersProfileCtrl.detailer.cellphone" placeholder="Phone Number">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Services offered -->
+  <h2> Services Provided </h2>
+  <div class="ui form" ng-repeat="service in detailersProfileCtrl.services" class="ui checkbox">
+    <input type="checkbox" checklist-model="detailersProfileCtrl.servicesOffered" checklist-value="service.serviceType">
+    <label>{{service.serviceType}}</label>
+  </div>
+
+  <!-- Availability Entries -->
+  <h2> Availability </h2>
+
+
+
+  <!-- rating table -->
+  <div class="ui circular segment">
+    <div class="ui horizontal divider">
+      <h2 class="ui header">
+    Your Rating
+    <div class="sub header">
+    {{detailersProfileCtrl.detailer.rating}}
+    <i class="floated right star icon"></i>
+    </div>
+  </h2>
+    </div>
+  </div>
+
+
+  <!-- save button -->
+  <button class="ui right floated primary button" ng-click="detailersProfileCtrl.save()">
+  Save
+  </button>
+
+</body>
