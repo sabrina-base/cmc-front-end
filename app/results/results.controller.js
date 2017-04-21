@@ -11,6 +11,47 @@
   function ResultsController(resultsFactory, $stateParams, NgMap, $scope, $timeout) {
     var vm = this;
 
+    vm.Test = function Test() {
+      console.log("Test");
+
+      var service = {
+        serviceType: "Handwash",
+        cost: 40.00
+      };
+
+      var vehicleType = {
+        vehicleSize: "SUV",
+        multiplier: 1.2
+      };
+
+      var preference = {
+        service: service,
+        vehicleType: vehicleType,
+        dateTime: '04/21/2017 13:00:00',
+        dbGeography: null
+      };
+
+      console.log("Preference: ", preference);
+
+      resultsFactory
+        .test()
+        .then(function(data) {
+          vm.test = data;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
+
+      // resultsFactory
+      //   .getAvailableDetailers(preference)
+      //   .then(function(data) {
+      //     vm.test = data;
+      //   })
+      //   .catch(function(error) {
+      //     console.error(error);
+      //   });
+    }
+
     vm.priceDivVisibility = false;
     vm.ratingDivVisibility = false;
     vm.availabilityDivVisibility = false;
@@ -89,15 +130,15 @@
       });
     }
 
-    function getDetailers(){
+    function getDetailers() {
       resultsFactory
-      .getAvailableDetailers()
-      .then(function(data) {
-        vm.detailers = data;
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
+        .getAvailableDetailers()
+        .then(function(data) {
+          vm.detailers = data;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
     }
 
     vm.showPriceDiv = function showPriceDiv() {
@@ -119,45 +160,35 @@
     }
 
     vm.filterByPrice = function filterByPrice(price) {
-      if (price === "any")
-      {
+      if (price === "any") {
         vm.detailerOptions = vm.allDetailers.reverse();
-      }
-      else if (price === "cheap")
-      {
+      } else if (price === "cheap") {
 
-      }
-      else if (price === "medium")
-      {
+      } else if (price === "medium") {
 
-      }
-      else if (price === "expensive")
-      {
+      } else if (price === "expensive") {
 
       }
     }
     vm.filterByRating = function filterByRating(rating) {
       vm.detailerOptions = [];
-      if (rating === 0){
+      if (rating === 0) {
         vm.detailerOptions = vm.allDetailers;
-      }
-      else if (rating === 2){
+      } else if (rating === 2) {
         for (var i = 0; i < vm.allDetailers.length; i++) {
-          if (vm.allDetailers[i].rating >= 0 && vm.allDetailers[i].rating < 3){
+          if (vm.allDetailers[i].rating >= 0 && vm.allDetailers[i].rating < 3) {
             vm.detailerOptions.push(vm.allDetailers[i]);
           }
         }
-      }
-      else if (rating === 3){
+      } else if (rating === 3) {
         for (var i = 0; i < vm.allDetailers.length; i++) {
-          if (vm.allDetailers[i].rating >= 3 && vm.allDetailers[i].rating < 4){
+          if (vm.allDetailers[i].rating >= 3 && vm.allDetailers[i].rating < 4) {
             vm.detailerOptions.push(vm.allDetailers[i]);
           }
         }
-      }
-      else if (rating === 4){
+      } else if (rating === 4) {
         for (var i = 0; i < vm.allDetailers.length; i++) {
-          if (vm.allDetailers[i].rating >= 4 && vm.allDetailers[i].rating <= 5){
+          if (vm.allDetailers[i].rating >= 4 && vm.allDetailers[i].rating <= 5) {
             vm.detailerOptions.push(vm.allDetailers[i]);
           }
         }

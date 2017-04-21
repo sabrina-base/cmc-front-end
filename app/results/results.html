@@ -2,6 +2,8 @@
 
 <p>{{resultsCtrl.resultsTest}}</p>
 
+<button ng-click="resultsCtrl.Test()">Test</button>
+
 <section id="results" class="ui grid">
   <section id="map" class="eleven wide column">
     <div class="ui grid">
@@ -72,7 +74,7 @@
         <p>$ {{detailerOption.multiplier * 100}} dlls</p>
       </div>
       <div class="six wide column middle aligned content">
-        <button class="ui teal button small">
+        <button ui-sref="landing" class="ui teal button small">
           Set Appointment!
         </button>
       </div>

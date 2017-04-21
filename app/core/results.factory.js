@@ -1,29 +1,42 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.core')
-        .factory('resultsFactory', resultsFactory);
+  angular
+    .module('app.core')
+    .factory('resultsFactory', resultsFactory);
 
-    resultsFactory.$inject = ['$http', 'apiUrl'];
+  resultsFactory.$inject = ['$http', 'apiUrl'];
 
-    /* @ngInject */
-    function resultsFactory($http, apiUrl) {
-        var service = {
-            getAvailableDetailers: getAvailableDetailers
-        };
+  /* @ngInject */
+  function resultsFactory($http, apiUrl) {
+    var service = {
+      test: test,
+      getAvailableDetailers: getAvailableDetailers
+    };
 
-        function getAvailableDetailers() {
-          return $http
-            .get(apiUrl + 'results/')
-            .then(function(response) {
-              return response.data;
-            })
-            .catch(function(error) {
-              console.error(error);
-            });
-        }
-
-        return service;
+    function test() {
+      var id = 1;
+      return $http
+        .get(apiUrl + 'results/test/')
+        .then(function(response) {
+          return response.data;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
     }
+
+    function getAvailableDetailers() {
+      return $http
+        .get(apiUrl + 'results/')
+        .then(function(response) {
+          return response.data;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
+    }
+
+    return service;
+  }
 })();
