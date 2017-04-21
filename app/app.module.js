@@ -5,14 +5,14 @@
         .module('app', [
             'ui.router',
             'ui.select2',
-            'app.landing',
             'app.core',
-            'mgo-angular-wizard'
+            'mgo-angular-wizard',
+            'LocalStorageModule'
         ])
-      //  .value('apiUrl', 'http://washmycarapi.azurewebsites.net/api/')
-       .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
-        .config(function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('detailersProfile');
+        .value('apiUrl', 'http://washmycarapi-dev.azurewebsites.net/api/')
+        .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+            $httpProvider.interceptors.push('authInterceptorService')
+            $urlRouterProvider.otherwise('/landing');
             // Configure each one of our states
             $stateProvider
                 .state('landing', {
@@ -20,11 +20,21 @@
                     controller: 'LandingController as landingCtrl',
                     templateUrl: 'app/landing/landing.html'
                 });
-          $stateProvider
-             .state('detailersProfile', {
-                 url: '/detailersProfile',
-                 controller: 'DetailersProfileController as detailersProfileCtrl',
-                 templateUrl: 'app/detailersProfile/detailersProfile.html'
-             });
+            $stateProvider
+                .state('detailersProfile', {
+                    url: '/detailersProfile',
+                    controller: 'DetailersProfileController as detailersProfileCtrl',
+                    templateUrl: 'app/detailersProfile/detailersProfile.html'
+                })
+                .state('login', {
+                    url: '/login',
+                    controller: 'LoginController as loginCtrl',
+                    templateUrl: 'app/login/login.html'
+                })
+                .state('profile', {
+                    url: '/profile',
+                    controller: 'ProfileController as profileCtrl',
+                    templateUrl: 'app/profile/profile.html'
+                })
         });
 })();
