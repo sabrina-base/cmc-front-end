@@ -5,14 +5,11 @@
 	<link rel="stylesheet" href="bower_components/select2/select2.css" />
 	<link rel="stylesheet" href="bower_components/angular-wizard/dist/angular-wizard.min.css" />
 	<link rel="stylesheet" href="bower_components/semantic-ui-calendar/dist/calendar.css" />
-<<<<<<< HEAD
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
 	<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
 	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
-=======
 	<link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
 	<link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
->>>>>>> 30b699cb13dbb67bfbd15f2d007b8091a1675bff
 	<!-- endbower -->
 
 	<!-- inject:css -->
@@ -37,10 +34,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<button class="btn" ui-sref="login">Login</button>
+	<div id="container">
+		<!-- <button class="btn" ui-sref="login">Login</button> -->
 		<div ui-view></div>
 	</div>
+	<!-- <footer class="footer">
+		<p>Arlin</p>
+	</footer> -->
+
 	<!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
@@ -68,15 +69,11 @@
 	<script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
 	<script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
 	<!-- endbower -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczz3WsssvHOeYkPDXjIAv54t3SzCaPzE&libraries=places"></script>
+
 	<!-- inject:js -->
 	<script src="app/app.module.js"></script>
 	<script src="app/core/core.module.js"></script>
-	<script src="app/wizard/wizard.module.js"></script>
-	<script src="app/cmc-marketing/wizard/landing.module.js"></script>
 	<script src="app/appointments/appointments.controller.js"></script>
-	<script src="app/cmc-marketing/wizard/wizard.module.js"></script>
-	<script src="app/landing/landing.controller.js"></script>
 	<script src="app/core/appointments.factory.js"></script>
 	<script src="app/core/appointmentServices.factory.js"></script>
 	<script src="app/core/authentication.factory.js"></script>
@@ -91,8 +88,6 @@
 	<script src="app/core/vehicleType.factory.js"></script>
 	<script src="app/detailersProfile/detailersProfile.controller.js"></script>
 	<script src="app/landing/landing.controller.js"></script>
-	<script src="app/wizard/wizard.controller.js"></script>
-	<script src="app/wizard/wizard.factory.js"></script>
 	<script src="app/login/login.controller.js"></script>
 	<script src="app/profile/profileCustomer.controller.js"></script>
 	<script src="app/register/register.controller.js"></script>

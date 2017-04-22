@@ -1,29 +1,64 @@
-<div class="ui large form">
-    <div class="two fields">
-        <div class="field">
-            <label>Vehicle Type:</label>
-            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedVehicle" ng-options="vehicle.multiplier as vehicle.vehicleSize for vehicle in landingCtrl.vehicleTypes">
-            <option value="">Vehicle Type</option>
-        </select>
-        </div>
-        <div class="field">
-            <label>Services Offered</label>
-            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedService" ng-options="service.cost as service.serviceType for service in landingCtrl.services">
-            <option value="">Service</option>
-        </select>
-        </div>
-        <div class="field">
-            <label>Pick the date</label>
-            <div class="ui calendar" id="example1">
-                <div class="ui input left icon">
-                    <i class="calendar icon"></i>
-                    <input type="text" placeholder="Date/Time">
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="ui teal button" ng-click="landingCtrl.estimate()">Calculate</button>
-    <br> {{landingCtrl.price | currency: '$'}}
-    <br><button class="ui teal button" ui-sref="registerCustomers">Register as a customer!</button>
-    <br><button class="ui teal button" ui-sref="registerDetailers">Register as a detialer!</button>
+<h4>Making it easy to</h4>
+<h1>Wash your car!</h1>
+
+<!-- First step: Services -->
+<div class="grid ui" ng-show="landingCtrl.showFirstStep">
+  <div class="twelve wide column grid ui centered">
+    <button class="five wide column blue customOption" ng-repeat="service in landingCtrl.services">
+    <!-- <img src="../../Images/Background.jpg" alt="" class="src"> -->
+    <label>{{service.serviceType}}</label>
+  </button>
+  </div>
+  <div class="one wide column frwdOption" ng-click="landingCtrl.goToSecondStep()">
+      <i class="right chevron icon"></i>
+  </div>
 </div>
+
+<!-- Second step: Vehicle Type -->
+<div class="grid ui" ng-show="landingCtrl.showSecondStep">
+  <div class="one wide column backOption" ng-click="landingCtrl.goToFirstStep()">
+      <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui centered">
+    <button class="five wide column blue customOption" ng-repeat="vehicleType in landingCtrl.vehicleTypes">
+    <!-- <img src="../../Images/Background.jpg" alt="" class="src"> -->
+    <label>{{vehicleType.vehicleSize}}</label>
+  </button>
+  </div>
+  <div class="one wide column frwdOption" ng-click="landingCtrl.goToThirdStep()">
+      <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- Third step: DateTime -->
+<div class="grid ui" ng-show="landingCtrl.showThirdStep">
+  <div class="one wide column backOption" ng-click="landingCtrl.goToSecondStep()">
+    <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui input centered">
+    <label class="ten wide column" for="appointmentDate">When would you like to schedule your service?:</label>
+    <input class="ten wide column" type="date" id="appointmentDate">
+  </div>
+  <div class="one wide column frwdOption" ng-click="landingCtrl.goToFourthStep()">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- Fourth step: Address -->
+<div class="grid ui" ng-show="landingCtrl.showFourthStep">
+  <div class="one wide column backOption" ng-click="landingCtrl.goToThirdStep()">
+    <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui input centered">
+    <label class="ten wide column" for="address" class="ten wide column">Address</label>
+    <input class="ten wide column" type="text" />
+    <!-- <input type="text" class="form-control" g-places-autocomplete ng-model="landingCtrl.address"> -->
+  </div>
+  <div class="one wide column frwdOption" ui-sref="results">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- <div class="customButton" ng-repeat="vehicleType in landingCtrl.vehicleTypes">
+
+</div> -->

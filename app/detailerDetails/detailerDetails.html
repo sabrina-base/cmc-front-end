@@ -1,12 +1,5 @@
-<head>
-
 <h1><center> Detailers Profile </center></h1>
-
-
-</head>
 <!-- Basic Informatiion table -->
-
-<body>
   <div>
     <h2> Basic Information </h2>
     <center>
@@ -43,7 +36,6 @@
     </div>
   </div>
 
-
   <!-- Services offered -->
   <h2> Services Provided </h2>
   <div class="ui form" ng-repeat="service in detailersProfileCtrl.services" class="ui checkbox">
@@ -53,9 +45,6 @@
 
   <!-- Availability Entries -->
   <h2> Availability </h2>
-
-
-
   <!-- rating table -->
   <div class="ui circular segment">
     <div class="ui horizontal divider">
@@ -69,12 +58,7 @@
     </div>
   </div>
 
-
   <!-- save button -->
   <button class="ui right floated primary button" ng-click="detailersProfileCtrl.save()">
-  Save
+    Save
   </button>
-  <button ui-sref="appointments({ id: detailer.detailerId })" class="ui right floated primary button">
-      appointments
-    </button>
-</body>
