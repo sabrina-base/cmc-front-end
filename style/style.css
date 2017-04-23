@@ -13,19 +13,24 @@ img{
 }
 
 .customOption {
-  margin: 5px;
+  margin: 10px;
   height: 150px;
   border: 0;
+  background-color: white;
 }
 
 .customOption img {
   height: 100px;
 }
 
-.customOption label{
+.customOption label, .customOption visible content label, .customOption hidden content label{
   text-align: center;
   font-size: 20px;
   display: block;
+}
+
+.customOption: hover{
+  background-color: red;
 }
 
 .backOption{

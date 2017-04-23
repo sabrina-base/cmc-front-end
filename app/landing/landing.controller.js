@@ -49,7 +49,7 @@
           return item;
         }
         function addServicePicture(item) {
-          item.picture = "../../Images/Service/" + item.serviceType + ".png";
+          item.picture = "../../Images/Service/" + item.serviceType + ".PNG";
           return item;
         }
 
