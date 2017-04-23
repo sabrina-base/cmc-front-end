@@ -19,29 +19,56 @@
 </head>
 
 <body>
-	<div class="ui menu">
-		<a class="item">
-       Home
-     </a>
-		<div class="ui pointing simple dropdown link item">
-			<span class="text">Customers</span>
-			<i class="dropdown icon"></i>
-			<div class="menu ui transition">
-				<div class="item">Home Goods</div>
-				<div class="item">Bedroom</div>
-				<div class="item active">Status</div>
-				<div class="item">Cancellations</div>
+	<div id="wrapper">
+		<header class="ui menu">
+			<div class="pointer" ui-sref="landing">
+				<img src="Images/logo.png" height="50px" alt="Home">
 			</div>
+			<a class="item">
+       Home
+    </a>
+			<div class="ui pointing simple dropdown link item">
+				<span class="text">Customers</span>
+				<i class="dropdown icon"></i>
+				<div class="menu ui transition">
+					<div class="item">Home Goods</div>
+					<div class="item">Bedroom</div>
+					<div class="item active">Status</div>
+					<div class="item">Cancellations</div>
+				</div>
+			</div>
+		</header>
+		<div id="container">
+			<!-- <button class="btn" ui-sref="login">Login</button> -->
+			<div ui-view></div>
 		</div>
+		<footer class="grid ui">
+			<div class="sixteen wide column">
+				<img src="Images/logo.png" height="50px" alt="" class="src" />
+				<img src="Images/appstore.png" height="50px" alt="" class="src" />
+				<img src="Images/playstore.png" height="50px" alt="" class="src" />
+			</div>
+			<div class="six wide column">
+				WashMyCar is a technology platform that connects local detailers with you.
+			</div>
+			<div class="four wide column">
+				<a class="pointer" ui-sref="">How it works</a><br>
+				<a class="pointer" ui-sref="">About us</a><br>
+				<a class="pointer" ui-sref="">Group of developers</a><br>
+				<a class="pointer" ui-sref="">Terms & conditions</a>
+			</div>
+			<div class="four wide column">
+				Connect with us:<br><br>
+				<i class="github icon pointer"></i>
+				<i class="facebook icon pointer"></i>
+				<i class="twitter icon pointer"></i>
+
+			</div>
+			<div class="sixteen wide column">
+				<p> WashMyCar &reg;</p>
+			</div>
+		</footer>
 	</div>
-	<div id="container">
-		<button class="btn" ui-sref="login">Login</button>
-		<!-- <button class="btn" ui-sref="login">Login</button> -->
-		<div ui-view></div>
-	</div>
-	<!-- <footer class="footer">
-		<p>Arlin</p>
-	</footer> -->
 
 	<!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>

@@ -1,10 +1,11 @@
-<h4>Making it easy to</h4>
-<h1>Wash your car!</h1>
+<div class="grid ui centered" id="wizardHeader">
+  <h3>No matter where you are...</h3><br>
+  <h1><i>WASH</i></h1> <h1>your car!</h1>
+</div>
 
 <!-- First step: Services -->
 <div class="grid ui" ng-show="landingCtrl.showFirstStep">
   <div class="one wide column">
-    <!-- <i class="left chevron icon"></i> -->
   </div>
   <div class="fourteen wide column grid ui centered">
     <button class="five wide column blue customOption ui fade animated button" ng-repeat="service in landingCtrl.services">
@@ -18,14 +19,14 @@
         </div>
       </button>
   </div>
-  <div class="one wide column frwdOption" ng-click="landingCtrl.goToSecondStep()">
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToSecondStep()">
     <i class="right chevron icon"></i>
   </div>
 </div>
 
 <!-- Second step: Vehicle Type -->
 <div class="grid ui" ng-show="landingCtrl.showSecondStep">
-  <div class="one wide column backOption" ng-click="landingCtrl.goToFirstStep()">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToFirstStep()">
     <i class="left chevron icon"></i>
   </div>
   <div class="fourteen wide column grid ui centered">
@@ -40,28 +41,28 @@
       </div>
     </button>
   </div>
-  <div class="one wide column frwdOption" ng-click="landingCtrl.goToThirdStep()">
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToThirdStep()">
     <i class="right chevron icon"></i>
   </div>
 </div>
 
 <!-- Third step: DateTime -->
 <div class="grid ui" ng-show="landingCtrl.showThirdStep">
-  <div class="one wide column backOption" ng-click="landingCtrl.goToSecondStep()">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToSecondStep()">
     <i class="left chevron icon"></i>
   </div>
   <div class="fourteen wide column grid ui input centered">
     <label class="ten wide column" for="appointmentDate">When would you like to schedule your service?:</label>
     <input class="ten wide column" type="date" id="appointmentDate">
   </div>
-  <div class="one wide column frwdOption" ng-click="landingCtrl.goToFourthStep()">
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToFourthStep()">
     <i class="right chevron icon"></i>
   </div>
 </div>
 
 <!-- Fourth step: Address -->
 <div class="grid ui" ng-show="landingCtrl.showFourthStep">
-  <div class="one wide column backOption" ng-click="landingCtrl.goToThirdStep()">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToThirdStep()">
     <i class="left chevron icon"></i>
   </div>
   <div class="fourteen wide column grid ui input centered">
@@ -69,7 +70,7 @@
     <input class="ten wide column" type="text" />
     <!-- <input type="text" class="form-control" g-places-autocomplete ng-model="landingCtrl.address"> -->
   </div>
-  <div class="one wide column frwdOption" ui-sref="results">
+  <div class="one wide column frwdOption pointer" ui-sref="results">
     <i class="right chevron icon"></i>
   </div>
 </div>

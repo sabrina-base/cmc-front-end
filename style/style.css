@@ -1,26 +1,75 @@
+html,
+body{
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  padding: 50px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+header{
+  background-color: snow;
+}
+
+#navbar{
+margin-top: 50px;
+height: 50px;
+}
+
+#container {
+  min-height: 100%;
+  background-image: url('../Images/Background-2.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  /*padding-left: 5em;
+  padding-right: 5em;*/
+}
+
+footer{
+  /*height: 50px;*/
+  background-color: snow;
+  color: lightblue;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+footer div{
+  margin-left: 50px;
+}
+
+footer div img{
+  margin: 5px 20px;
+}
+
+
+
+
+
 h1, h2, h3, h4 {
   text-align: center;
   /*padding: 5px 0 10px 0;*/
-}
-
-img{
-  display: block;
-  margin: auto;
 }
 
 .pointer {
   cursor: pointer;
 }
 
-.customOption {
-  margin: 10px;
-  height: 150px;
-  border: 0;
-  background-color: white;
+.customOption{
+  background-color: Transparent;
+  opacity: 0.9;
 }
 
 .customOption img {
-  height: 100px;
+  height: 130px;
+  display: block;
+  margin: 5px auto;
 }
 
 .customOption label, .customOption visible content label, .customOption hidden content label{
@@ -29,28 +78,20 @@ img{
   display: block;
 }
 
-.customOption: hover{
-  background-color: red;
-}
-
 .backOption{
   height: 100%;
 }
 
 .frwdOption{
   height: 100%;
-  background-color: white;
 }
 
-#container {
-  height: 100%;
-  padding-left: 5em;
-  padding-right: 5em;
-  /*background-image: url('../Images/Background.jpg');*/
-  /*background-size: cover;*/
-  /*background-repeat: no-repeat;*/
-}
 
+
+#wizardHeader{
+  padding: 25px;
+  color: royalblue;
+}
 
 /*GRIDS*/
 
