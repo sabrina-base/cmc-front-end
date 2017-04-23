@@ -28,6 +28,8 @@ height: 50px;
   background-image: url('../Images/Background-2.jpg');
   background-size: cover;
   background-repeat: repeat;
+  padding: 10px 0 25px 0;
+  /*-webkit-filter: blur(10px);*/
   /*padding-left: 5em;
   padding-right: 5em;*/
 }
@@ -62,8 +64,17 @@ h1, h2, h3, h4 {
 }
 
 .customOption{
-  background-color: Transparent;
+  background-color: LightSkyBlue;
   opacity: 0.9;
+  margin: 10px;
+}
+
+.customOption:hover{
+  background-color: LightBlue;
+}
+
+.test:checked+label {
+    background-color: red;
 }
 
 .customOption img {
