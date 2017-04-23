@@ -1,15 +1,17 @@
+<button ng-click="appointmentsCtrl.schedule()">Detailer schedule</button>
+
 <div ng-cloak>
     <md-content>
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="Requests">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Requests</h1>                    
+                    <h1 class="md-display-2">Requests</h1>
                     <table>
                         <tr ng-repeat="appointment in appointmentsCtrl.appointments"
                             ng-hide="appointment.confirmedDate || appointment.cancelledDate">
                             <td>
-                                <br> 
-                                {{appointment.firstName}} {{appointment.lastName}} has requested an appointment for {{appointment.appointmentDate | date: 'medium'}} 
+                                <br>
+                                {{appointment.firstName}} {{appointment.lastName}} has requested an appointment for {{appointment.appointmentDate | date: 'medium'}}
                                 <span ng-show="appointment.confirmedDate">{{appointment.confirmedDate | date}}</span>
                                 <span ng-show="appointment.cancelledDate">{{appointment.cancelledDate | date}}</span>
                                 <br>
@@ -50,7 +52,7 @@
                     <table>
                         <tr ng-repeat="appointment in appointmentsCtrl.appointments">
                             <td>
-                                <br> {{appointment.servicesWithAppointment}} 
+                                <br> {{appointment.servicesWithAppointment}}
                                 <br>
                             </td>
                             <td width="3%">

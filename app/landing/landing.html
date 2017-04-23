@@ -3,7 +3,10 @@
 
 <!-- First step: Services -->
 <div class="grid ui" ng-show="landingCtrl.showFirstStep">
-  <div class="twelve wide column grid ui centered">
+  <div class="one wide column">
+      <!-- <i class="left chevron icon"></i> -->
+  </div>
+  <div class="fourteen wide column grid ui centered">
     <button class="five wide column blue customOption" ng-repeat="service in landingCtrl.services">
     <!-- <img src="../../Images/Background.jpg" alt="" class="src"> -->
     <label>{{service.serviceType}}</label>
@@ -21,9 +24,9 @@
   </div>
   <div class="fourteen wide column grid ui centered">
     <button class="five wide column blue customOption" ng-repeat="vehicleType in landingCtrl.vehicleTypes">
-    <!-- <img src="../../Images/Background.jpg" alt="" class="src"> -->
-    <label>{{vehicleType.vehicleSize}}</label>
-  </button>
+      <img src="{{vehicleType.picture}}" alt="{{vehicleType.picture}}">
+      <label>{{vehicleType.vehicleSize}}</label>
+    </button>
   </div>
   <div class="one wide column frwdOption" ng-click="landingCtrl.goToThirdStep()">
       <i class="right chevron icon"></i>

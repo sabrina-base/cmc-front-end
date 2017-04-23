@@ -28,7 +28,7 @@
             vehicleTypeFactory
                 .getAll()
                 .then(function(data) {
-                    vm.vehicleTypes = data;//.map(addVehicleTypePicture);
+                    vm.vehicleTypes = data.map(addVehicleTypePicture);
                 })
                 .catch(function(error) {
                     console.error(error);
@@ -37,18 +37,20 @@
             servicesFactory
                 .getAll()
                 .then(function(data) {
-                    vm.services = data;
+                    vm.services = data.map(addServicePicture);
                 })
                 .catch(function(error) {
                     console.error(error);
                 });
         }
 
-        function addVehicleTypePicture(v) {
-          v.picture = "../../Images/VehicleType/" + v.vehicleSize + ".png";
+        function addVehicleTypePicture(item) {
+          item.picture = "../../Images/VehicleType/" + item.vehicleSize + ".png";
+          return item;
         }
-        function addServicePicture(v) {
-          v.picture = "../../Images/Service/" + v.serviceType;
+        function addServicePicture(item) {
+          item.picture = "../../Images/Service/" + item.serviceType + ".png";
+          return item;
         }
 
         vm.goToFirstStep = function goToFirstStep() {

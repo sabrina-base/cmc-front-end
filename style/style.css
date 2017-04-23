@@ -1,6 +1,11 @@
 h1, h2, h3, h4 {
   text-align: center;
-  padding: 5px 0 10px 0;
+  /*padding: 5px 0 10px 0;*/
+}
+
+img{
+  display: block;
+  margin: auto;
 }
 
 .pointer {
@@ -19,8 +24,8 @@ h1, h2, h3, h4 {
 
 .customOption label{
   text-align: center;
-  width: 100%;
   font-size: 20px;
+  display: block;
 }
 
 .backOption{
