@@ -16,7 +16,7 @@
     vm.showFourthStep = false;
     vm.selectedServices = [];
     vm.selectedVehicleType = null;
-    vm.selectedAppointmentDate = null;
+    vm.selectedAppointmentDate = new Date();
     vm.selectedAddress = null;
 
 

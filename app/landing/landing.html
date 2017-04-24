@@ -70,8 +70,11 @@
     <i class="left chevron icon"></i>
   </div>
   <div class="fourteen wide column grid ui input centered">
-    <label class="ten wide column" for="appointmentDate">When would you like to schedule your service?:</label>
-    <input class="ten wide column" type="date" id="appointmentDate">
+    <label class="ten wide column" for="appointmentDate">When would you like to schedule your service?</label>
+    <label class="ten wide column" for="appointmentDate">Date:</label>
+    <input class="ten wide column" type="date" id="appointmentDate" ng-model="landingCtrl.selectedAppointmentDate">
+    <label class="ten wide column" for="appointmentTime">Time:</label>
+    <input class="ten wide column" type="time" id="appointmentTime" ng-model="landingCtrl.selectedAppointmentTime">
   </div>
   <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToFourthStep()">
     <i class="right chevron icon"></i>
