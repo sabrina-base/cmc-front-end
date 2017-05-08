@@ -5,14 +5,11 @@
 	<link rel="stylesheet" href="bower_components/select2/select2.css" />
 	<link rel="stylesheet" href="bower_components/angular-wizard/dist/angular-wizard.min.css" />
 	<link rel="stylesheet" href="bower_components/semantic-ui-calendar/dist/calendar.css" />
-<<<<<<< HEAD
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
 	<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
 	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
-=======
 	<link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
 	<link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
->>>>>>> 30b699cb13dbb67bfbd15f2d007b8091a1675bff
 	<!-- endbower -->
 
 	<!-- inject:css -->
@@ -22,25 +19,57 @@
 </head>
 
 <body>
-	<div class="ui menu">
-		<a class="item">
-       Home
-     </a>
-		<div class="ui pointing simple dropdown link item">
-			<span class="text">Customers</span>
-			<i class="dropdown icon"></i>
-			<div class="menu ui transition">
-				<div class="item">Home Goods</div>
-				<div class="item">Bedroom</div>
-				<div class="item active">Status</div>
-				<div class="item">Cancellations</div>
+	<div id="wrapper">
+		<header class="ui menu">
+			<div class="pointer" ui-sref="landing">
+				<img src="Images/logo.png" height="50px" alt="Home">
 			</div>
+			<a class="item">
+       Home
+    </a>
+			<div class="ui pointing simple dropdown link item">
+				<span class="text">Customers</span>
+				<i class="dropdown icon"></i>
+				<div class="menu ui transition">
+					<div class="item">Home Goods</div>
+					<div class="item">Bedroom</div>
+					<div class="item active">Status</div>
+					<div class="item">Cancellations</div>
+				</div>
+			</div>
+		</header>
+		<div id="container">
+			<!-- <button class="btn" ui-sref="login">Login</button> -->
+			<div ui-view></div>
 		</div>
+		<footer class="grid ui">
+			<div class="sixteen wide column">
+				<img src="Images/logo.png" height="50px" alt="" class="src" />
+				<img src="Images/appstore.png" height="50px" alt="" class="src" />
+				<img src="Images/playstore.png" height="50px" alt="" class="src" />
+			</div>
+			<div class="six wide column">
+				WashMyCar is a technology platform that connects local detailers with you.
+			</div>
+			<div class="four wide column">
+				<a class="pointer" ui-sref="a">How it works</a><br>
+				<a class="pointer" ui-sref="b">About us</a><br>
+				<a class="pointer" ui-sref="c">Group of developers</a><br>
+				<a class="pointer" ui-sref="d">Terms & conditions</a>
+			</div>
+			<div class="four wide column">
+				Connect with us:<br><br>
+				<i class="github icon pointer"></i>
+				<i class="facebook icon pointer"></i>
+				<i class="twitter icon pointer"></i>
+
+			</div>
+			<div class="sixteen wide column">
+				<p> WashMyCar &reg;</p>
+			</div>
+		</footer>
 	</div>
-	<div class="container">
-		<button class="btn" ui-sref="login">Login</button>
-		<div ui-view></div>
-	</div>
+
 	<!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
@@ -68,15 +97,11 @@
 	<script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
 	<script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
 	<!-- endbower -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDczz3WsssvHOeYkPDXjIAv54t3SzCaPzE&libraries=places"></script>
+
 	<!-- inject:js -->
 	<script src="app/app.module.js"></script>
 	<script src="app/core/core.module.js"></script>
-	<script src="app/wizard/wizard.module.js"></script>
-	<script src="app/cmc-marketing/wizard/landing.module.js"></script>
 	<script src="app/appointments/appointments.controller.js"></script>
-	<script src="app/cmc-marketing/wizard/wizard.module.js"></script>
-	<script src="app/landing/landing.controller.js"></script>
 	<script src="app/core/appointments.factory.js"></script>
 	<script src="app/core/appointmentServices.factory.js"></script>
 	<script src="app/core/authentication.factory.js"></script>
@@ -91,8 +116,6 @@
 	<script src="app/core/vehicleType.factory.js"></script>
 	<script src="app/detailersProfile/detailersProfile.controller.js"></script>
 	<script src="app/landing/landing.controller.js"></script>
-	<script src="app/wizard/wizard.controller.js"></script>
-	<script src="app/wizard/wizard.factory.js"></script>
 	<script src="app/login/login.controller.js"></script>
 	<script src="app/profile/profileCustomer.controller.js"></script>
 	<script src="app/register/register.controller.js"></script>

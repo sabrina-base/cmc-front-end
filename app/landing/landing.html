@@ -1,29 +1,101 @@
-<div class="ui large form">
-    <div class="two fields">
-        <div class="field">
-            <label>Vehicle Type:</label>
-            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedVehicle" ng-options="vehicle.multiplier as vehicle.vehicleSize for vehicle in landingCtrl.vehicleTypes">
-            <option value="">Vehicle Type</option>
-        </select>
-        </div>
-        <div class="field">
-            <label>Services Offered</label>
-            <select class="ui fluid dropdown" ng-model="landingCtrl.selectedService" ng-options="service.cost as service.serviceType for service in landingCtrl.services">
-            <option value="">Service</option>
-        </select>
-        </div>
-        <div class="field">
-            <label>Pick the date</label>
-            <div class="ui calendar" id="example1">
-                <div class="ui input left icon">
-                    <i class="calendar icon"></i>
-                    <input type="text" placeholder="Date/Time">
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="ui teal button" ng-click="landingCtrl.estimate()">Calculate</button>
-    <br> {{landingCtrl.price | currency: '$'}}
-    <br><button class="ui teal button" ui-sref="registerCustomers">Register as a customer!</button>
-    <br><button class="ui teal button" ui-sref="registerDetailers">Register as a detialer!</button>
+<div class="grid ui centered" id="wizardHeader">
+  <h3>No matter where you are...</h3><br>
+  <h1><i>WASH</i></h1>
+  <h1>your car!</h1>
 </div>
+
+<!-- First step: Services -->
+<div class="grid ui" ng-show="landingCtrl.showFirstStep">
+  <div class="one wide column">
+  </div>
+  <div class="fourteen wide column grid ui centered">
+    <div class="sixteen wide column">
+      <label>1. Choose the services you want:</label>
+    </div>
+    <div class="four wide column pointer customOption" ng-repeat="service in landingCtrl.services" ng-click="landingCtrl.addService(service)">
+        <img src="{{service.picture}}" alt="{{service.picture}}"/>
+        <label>{{service.serviceType}}</label>
+      <!-- <input type="checkbox" id="{{service.serviceType}}"/>
+      <label class="test" for="{{service.serviceType}}">
+        <img src="{{service.picture}}" alt="{{service.picture}}" />
+        {{service.serviceType}}
+      </label> -->
+    </div>
+    <!-- <button class="five wide column blue customOption ui fade animated button" ng-repeat="service in landingCtrl.services">
+        <div class="visible content">
+          <img src="{{service.picture}}" alt="{{service.picture}}"/>
+          <label>{{service.serviceType}}</label>
+        </div>
+        <div class="hidden content">
+          <i class="shop icon"></i>
+          <label>Add {{service.serviceType}} to cart</label>
+        </div>
+      </button> -->
+  </div>
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToSecondStep()">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- Second step: Vehicle Type -->
+<div class="grid ui" ng-show="landingCtrl.showSecondStep">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToFirstStep()">
+    <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui centered">
+    <div class="sixteen wide column">
+      <label>2. On what type of car?</label>
+    </div>
+    <button class="four wide column blue customOption ui fade animated button"
+            ng-repeat="vehicleType in landingCtrl.vehicleTypes"
+            ng-click="landingCtrl.setVehicleType(vehicleType)">
+      <div class="visible content">
+        <img src="{{vehicleType.picture}}" alt="{{vehicleType.picture}}"/>
+        <label>{{vehicleType.vehicleSize}}</label>
+      </div>
+      <div class="hidden content">
+        <i class="shop icon"></i>
+        <label>Add {{vehicleType.vehicleSize}} to cart</label>
+      </div>
+    </button>
+  </div>
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToThirdStep()">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- Third step: DateTime -->
+<div class="grid ui" ng-show="landingCtrl.showThirdStep">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToSecondStep()">
+    <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui input centered">
+    <label class="ten wide column" for="appointmentDate">When would you like to schedule your service?</label>
+    <label class="ten wide column" for="appointmentDate">Date:</label>
+    <input class="ten wide column" type="date" id="appointmentDate" ng-model="landingCtrl.selectedAppointmentDate">
+    <label class="ten wide column" for="appointmentTime">Time:</label>
+    <input class="ten wide column" type="time" id="appointmentTime" ng-model="landingCtrl.selectedAppointmentTime">
+  </div>
+  <div class="one wide column frwdOption pointer" ng-click="landingCtrl.goToFourthStep()">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- Fourth step: Address -->
+<div class="grid ui" ng-show="landingCtrl.showFourthStep">
+  <div class="one wide column backOption pointer" ng-click="landingCtrl.goToThirdStep()">
+    <i class="left chevron icon"></i>
+  </div>
+  <div class="fourteen wide column grid ui input centered">
+    <label class="ten wide column" for="address" class="ten wide column">Address</label>
+    <input class="ten wide column" type="text" />
+    <!-- <input type="text" class="form-control" g-places-autocomplete ng-model="landingCtrl.address"> -->
+  </div>
+  <div class="one wide column frwdOption pointer" ui-sref="results">
+    <i class="right chevron icon"></i>
+  </div>
+</div>
+
+<!-- <div class="customButton" ng-repeat="vehicleType in landingCtrl.vehicleTypes">
+
+</div> -->

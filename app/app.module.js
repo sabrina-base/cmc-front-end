@@ -6,7 +6,7 @@
             'ui.router',
             'ui.select2',
             'ui.calendar',
-            'app.landing',
+            // 'app.landing',
             'app.core',
             'ngMaterial',
             'mgo-angular-wizard',
